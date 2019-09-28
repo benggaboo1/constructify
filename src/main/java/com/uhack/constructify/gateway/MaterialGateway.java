@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface MaterialGateway {
     List<Material> findAllByRequest(OrderRequest orderRequest);
+    Material save(Material material);
+    Material findById(Long id);
 }

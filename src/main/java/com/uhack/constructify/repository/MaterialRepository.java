@@ -8,4 +8,8 @@ import java.util.List;
 
 public interface MaterialRepository extends Repository<MaterialEntity, Long> {
     List<MaterialEntity> getAllByRequest(OrderRequestEntity orderRequest);
+
+    MaterialEntity save(MaterialEntity materialEntity);
+
+    MaterialEntity findById(Long id);
 }

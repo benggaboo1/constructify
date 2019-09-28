@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 public class OrderRequest {
@@ -12,13 +11,12 @@ public class OrderRequest {
     private Long id;
     private Project project;
     private Double totalPrice;
-    private List<Material> materialList;
     private Area area;
     private LocalDateTime requestedDate;
     private int status;
 
     @Getter
-    enum Status {
+    public enum Status {
         PENDING(0),
         RECEIVED(1),
         DELIVERY_TO_WAREHOUSE(2),

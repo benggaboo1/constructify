@@ -1,9 +1,7 @@
 package com.uhack.constructify.service;
 
-import com.uhack.constructify.model.domain.OrderRequest;
-
-import java.util.List;
+import com.uhack.constructify.model.dto.InventoryResponse;
 
 public interface OrderRequestService {
-    List<OrderRequest> getAllOrderRequests(Long projectId);
+    InventoryResponse getAllOrderRequests(Long projectId);
 }

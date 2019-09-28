@@ -11,34 +11,31 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "materials")
-public class MaterialEntity {
+@Table(name = "update_history")
+public class MaterialHistoryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private MaterialEntity material;
 
-    @Column(name = "initial_quantity")
-    private String initialQuantity;
-
-    @Column(name = "current_quantity")
-    private String currentQuantity;
+    private String action;
 
     @OneToOne
-    @JoinColumn(name = "class_id")
-    private MaterialClassEntity materialClass;
+    @JoinColumn(name = "area_id")
+    private AreaEntity area;
 
-    @Column(name = "price")
-    private Double price;
+    @Column(name = "quantity")
+    private int quantity;
 
-    @ManyToOne
-    @JoinColumn(name = "order_request_id")
-    private OrderRequestEntity request;
+    @Column(name = "date_updated")
+    private Date dateUpdated;
 
 }

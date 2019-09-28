@@ -25,4 +25,17 @@ public class MaterialGatewayImpl implements MaterialGateway {
                 materialRepository.getAllByRequest(
                         orderRequestMapper.toEntity(orderRequest)));
     }
+
+    @Override
+    public Material save(Material material) {
+        return materialMapper.toDomain(
+                materialRepository.save(
+                        materialMapper.toEntity(material)));
+    }
+
+    @Override
+    public Material findById(Long id) {
+        return materialMapper.toDomain(
+                materialRepository.findById(id));
+    }
 }

@@ -8,4 +8,5 @@ import java.util.List;
 public interface AreaGateway {
 
     List<Area> getAllByProject(Project project);
+    Area findById(Long id);
 }

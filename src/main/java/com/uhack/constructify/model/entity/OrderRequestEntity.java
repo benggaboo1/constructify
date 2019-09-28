@@ -9,11 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.Date;
-import java.util.List;
 
 @Data
 @Entity
@@ -30,9 +28,6 @@ public class OrderRequestEntity {
 
     @Column(name = "total_price")
     private Double totalPrice;
-
-    @OneToMany(mappedBy = "request")
-    private List<MaterialEntity> materialList;
 
     @OneToOne
     @JoinColumn(name = "area_id")

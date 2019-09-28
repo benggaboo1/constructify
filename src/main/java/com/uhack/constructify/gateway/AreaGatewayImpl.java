@@ -24,4 +24,9 @@ public class AreaGatewayImpl implements AreaGateway {
                 areaRepository.getAllByProject(
                         projectMapper.toEntity(project)));
     }
+
+    @Override
+    public Area findById(Long id) {
+        return areaMapper.toDomain(areaRepository.findById(id));
+    }
 }
