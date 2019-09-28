@@ -1,6 +1,6 @@
 package com.uhack.constructify.model.entity;
 
-import lombok.Getter;
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Getter
+@Data
 @Entity
 @Table(name = "areas")
 public class AreaEntity {
