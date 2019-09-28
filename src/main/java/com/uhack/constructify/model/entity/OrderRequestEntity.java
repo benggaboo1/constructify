@@ -1,20 +1,24 @@
 package com.uhack.constructify.model.entity;
 
+import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.Date;
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "order_requests")
-public class RequestEntity {
+public class OrderRequestEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,8 +38,11 @@ public class RequestEntity {
     @JoinColumn(name = "area_id")
     private AreaEntity area;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private UserEntity userEntity;
+    @Column(name = "requested_date")
+    @CreationTimestamp
+    private Date requestedDate;
+
+    @Column(name = "status")
+    private int status;
 
 }

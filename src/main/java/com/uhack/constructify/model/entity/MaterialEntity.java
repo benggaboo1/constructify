@@ -1,6 +1,6 @@
 package com.uhack.constructify.model.entity;
 
-import lombok.Getter;
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Getter
+@Data
 @Entity
 @Table(name = "materials")
 public class MaterialEntity {
@@ -38,6 +38,6 @@ public class MaterialEntity {
 
     @ManyToOne
     @JoinColumn(name = "order_request_id")
-    private RequestEntity request;
+    private OrderRequestEntity request;
 
 }

@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
@@ -30,8 +31,6 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
-    @OneToMany
-    @JoinColumn(name = "project_id")
-    private List<ProjectEntity> projects;
-
+    @OneToMany(mappedBy = "user")
+    private List<ProjectEntity> project;
 }

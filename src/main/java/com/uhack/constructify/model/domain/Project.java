@@ -10,5 +10,5 @@ public class Project {
     private Long id;
     private String name;
     private String owner;
-    private List<User> users;
+    private User user;
 }
